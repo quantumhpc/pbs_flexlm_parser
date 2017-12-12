@@ -9,6 +9,9 @@ Modify the script to add the full path to **lmutil** and use it inside pbs sched
 lmparser.py -f feature_name -c port@licserver
 ```
 
+The script returns a single integer as the number of free licenses for the feature
+
+
 Exemple:
 ```
 server_dyn_res: "hpcdomains !/var/spool/pbs/server_priv/scripts/lmparser.py -f hpcdomains -c 1999@lic_server"
