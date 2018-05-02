@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import os, re, sys, getopt
-lmstat="/path/to/flexlm/lmutil lmstat"
+lmstat="/path/to/flexlm/lmutil"
+opts="lmstat"
 
 def print_usage():
 	print "Usage:"
@@ -27,7 +28,7 @@ def main(argv):
 		sys.exit(2)
 
 	# Spawn lmutil
-	licenses=os.popen("%s -a -c %s -f %s" % (lmstat, lic_server, feature))
+	licenses=os.popen("%s %s -a -c %s -f %s" % (lmstat, opts, lic_server, feature))
 	# Parse lines
 	for line in licenses:
 		if re.search("^Users of " + feature + ":.*$", line):
